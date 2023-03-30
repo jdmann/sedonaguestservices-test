@@ -11,6 +11,7 @@ const theme = extendTheme({
     mono: 'Roboto, sans-serif',
   },
 })
+console.log('theme', theme)
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
