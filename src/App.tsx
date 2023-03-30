@@ -1,13 +1,22 @@
-import { Heading } from '@chakra-ui/react'
-import './App.css'
+import { Button, Container, Divider, Heading, Image } from '@chakra-ui/react'
+import { ElfsightWidget } from 'react-elfsight-widget'
+import SedonaHeaderImage from './assets/sedona-header.jpg'
 
 function App() {
+  const handleContact = () => window.open('mailto:ohmigom@gmail.com')
   return (
-    <div className="App">
+    <Container maxW="6xl">
+      <Image src={SedonaHeaderImage} />
       <Heading>Sedona Guest Services</Heading>
-      <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-        <div className="elfsight-app-21e6b26e-a7c5-4a19-876b-1240d25995c8"></div>
-    </div>
+      <Button
+        colorScheme="linkedin"
+        onClick={handleContact}
+      >
+        Contact
+      </Button>
+      <Divider my={10} />
+      <ElfsightWidget widgetID="d254839d-abb3-4085-b4a1-59a38451e70f" />
+    </Container>
   )
 }
 
