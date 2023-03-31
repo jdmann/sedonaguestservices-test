@@ -38181,18 +38181,18 @@ const kee = (t) => {
                         V(xs, { as: qr, to: '/about', fontSize: '2xl', children: 'About Us' }),
                         V(xs, {
                           as: qr,
-                          to: '/reviews',
+                          to: '/tips',
                           fontSize: '2xl',
                           children: 'Tips for Owners',
                         }),
                         V(xs, {
                           as: qr,
-                          to: '/tips',
+                          to: '/regulations',
                           fontSize: '2xl',
                           children: 'Area Regulations',
                         }),
                         V(xs, { as: qr, to: '/cleaning', fontSize: '2xl', children: 'Cleaning' }),
-                        V(xs, { as: qr, to: '/regulations', fontSize: '2xl', children: 'Reviews' }),
+                        V(xs, { as: qr, to: '/reviews', fontSize: '2xl', children: 'Reviews' }),
                         V(xs, { as: qr, to: '/contact', fontSize: '2xl', children: 'Contact' }),
                         V(xs, {
                           as: qr,
