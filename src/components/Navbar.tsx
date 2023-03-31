@@ -12,11 +12,11 @@ import {
 } from '@chakra-ui/react'
 //   import { Logo } from './Logo'
 import { FiMenu, FiPhoneCall } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 export const Navbar: React.FC<BoxProps> = (props) => {
   const isDesktop = useBreakpointValue({ base: false, lg: true })
   const handlePhone = () => window.open('tel:928.985.0575')
-  const handleEmail = () => window.open('mailto:ohmigom@gmail.com')
 
   return (
     <Box
@@ -48,20 +48,34 @@ export const Navbar: React.FC<BoxProps> = (props) => {
                   variant="link"
                   spacing="8"
                 >
-                  <Button variant="link">Reviews</Button>
+                  {/* <Button
+                    variant="link"
+                    as={Link}
+                    to="/about"
+                  >
+                    About
+                  </Button> */}
+                  <Button
+                    variant="link"
+                    as={Link}
+                    to="/reviews"
+                  >
+                    Reviews
+                  </Button>
                 </ButtonGroup>
                 <HStack spacing="3">
                   <Button
                     leftIcon={<FiPhoneCall />}
                     onClick={handlePhone}
                   >
-                    Call Now
+                    928.985.0575
                   </Button>
                   <Button
                     colorScheme="linkedin"
-                    onClick={handleEmail}
+                    as={Link}
+                    to="/contact"
                   >
-                    Send Email
+                    Contact
                   </Button>
                 </HStack>
               </Flex>
