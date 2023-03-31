@@ -133,14 +133,14 @@ export const Navbar: React.FC<BoxProps> = (props) => {
                 </MenuItem>
                 <MenuItem
                   as={Link}
-                  to="/reviews"
+                  to="/tips"
                   fontSize="2xl"
                 >
                   Tips for Owners
                 </MenuItem>
                 <MenuItem
                   as={Link}
-                  to="/tips"
+                  to="/regulations"
                   fontSize="2xl"
                 >
                   Area Regulations
@@ -154,12 +154,11 @@ export const Navbar: React.FC<BoxProps> = (props) => {
                 </MenuItem>
                 <MenuItem
                   as={Link}
-                  to="/regulations"
+                  to="/reviews"
                   fontSize="2xl"
                 >
                   Reviews
                 </MenuItem>
-
                 <MenuItem
                   as={Link}
                   to="/contact"
