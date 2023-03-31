@@ -8,10 +8,14 @@ import {
   Heading,
   HStack,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   useBreakpointValue,
 } from '@chakra-ui/react'
 //   import { Logo } from './Logo'
-import { FiMenu, FiPhoneCall } from 'react-icons/fi'
+import { MdMenu, MdPhone } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
 export const Navbar: React.FC<BoxProps> = (props) => {
@@ -22,7 +26,6 @@ export const Navbar: React.FC<BoxProps> = (props) => {
     <Box
       as="section"
       bg="white"
-      mb={{ base: 5 }}
       {...props}
     >
       <Box
@@ -30,31 +33,53 @@ export const Navbar: React.FC<BoxProps> = (props) => {
         bg="bg-surface"
         boxShadow="sm"
       >
-        <Container
-          py={{ base: '4', lg: '5' }}
-          maxW="6xl"
-        >
-          <HStack
-            spacing="10"
-            justify="space-between"
+        {isDesktop ? (
+          <Container
+            py={{ base: '4', lg: '5' }}
+            maxW="6xl"
           >
-            <Heading fontSize="lg">Sedona Guest Services</Heading>
-            {isDesktop ? (
+            <HStack
+              spacing="10"
+              justify="space-between"
+            >
+              <Heading fontSize="lg">Sedona Guest Services</Heading>
               <Flex
                 justify="space-between"
                 flex="1"
+                gap={10}
               >
                 <ButtonGroup
                   variant="link"
                   spacing="8"
                 >
-                  {/* <Button
+                  <Button
                     variant="link"
                     as={Link}
                     to="/about"
                   >
-                    About
-                  </Button> */}
+                    About Us
+                  </Button>
+                  <Button
+                    variant="link"
+                    as={Link}
+                    to="/tips"
+                  >
+                    Tips for Owners
+                  </Button>
+                  <Button
+                    variant="link"
+                    as={Link}
+                    to="/regulations"
+                  >
+                    Area Regulations
+                  </Button>
+                  <Button
+                    variant="link"
+                    as={Link}
+                    to="/cleaning"
+                  >
+                    Cleaning
+                  </Button>
                   <Button
                     variant="link"
                     as={Link}
@@ -65,7 +90,7 @@ export const Navbar: React.FC<BoxProps> = (props) => {
                 </ButtonGroup>
                 <HStack spacing="3">
                   <Button
-                    leftIcon={<FiPhoneCall />}
+                    leftIcon={<MdPhone />}
                     onClick={handlePhone}
                   >
                     928.985.0575
@@ -79,15 +104,80 @@ export const Navbar: React.FC<BoxProps> = (props) => {
                   </Button>
                 </HStack>
               </Flex>
-            ) : (
-              <IconButton
+            </HStack>
+          </Container>
+        ) : (
+          <Flex
+            px={5}
+            justify="space-between"
+            align="center"
+          >
+            <Heading fontSize="lg">Sedona Guest Services</Heading>
+
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label="Mobile menu"
+                icon={<MdMenu fontSize="3xl" />}
+                colorScheme="linkedin"
                 variant="ghost"
-                icon={<FiMenu fontSize="1.25rem" />}
-                aria-label="Open Menu"
+                borderRadius={0}
               />
-            )}
-          </HStack>
-        </Container>
+              <MenuList>
+                <MenuItem
+                  as={Link}
+                  to="/about"
+                  fontSize="2xl"
+                >
+                  About Us
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  to="/reviews"
+                  fontSize="2xl"
+                >
+                  Tips for Owners
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  to="/tips"
+                  fontSize="2xl"
+                >
+                  Area Regulations
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  to="/cleaning"
+                  fontSize="2xl"
+                >
+                  Cleaning
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  to="/regulations"
+                  fontSize="2xl"
+                >
+                  Reviews
+                </MenuItem>
+
+                <MenuItem
+                  as={Link}
+                  to="/contact"
+                  fontSize="2xl"
+                >
+                  Contact
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  to="tel:928.985.0575"
+                  fontSize="2xl"
+                >
+                  Call Now
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+        )}
       </Box>
     </Box>
   )

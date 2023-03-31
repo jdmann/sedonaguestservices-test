@@ -3,7 +3,7 @@ import SedonaHeaderImage from '../../assets/sedona-header.jpg'
 
 export const PageHeader: React.FC<FlexProps> = ({ children, ...rest }) => (
   <Flex
-    borderRadius="24px"
+    borderRadius="0.5rem"
     backgroundImage={`url(${SedonaHeaderImage})`}
     backgroundSize="cover"
     height="300px"
@@ -13,7 +13,7 @@ export const PageHeader: React.FC<FlexProps> = ({ children, ...rest }) => (
     {...rest}
   >
     <Heading
-      size="2xl"
+      size={{ base: 'lg', md: '2xl' }}
       textShadow="dark-lg"
     >
       {children}
